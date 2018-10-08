@@ -3,7 +3,7 @@ import os
 
 ANSWERS = (1, 2, 3, 4, 5, 6, 7, 8, 9, 10)
 
-# clear screen function that was remembered from the exercises w/ Kenneth
+# clear screen function from the exercises
 def clear_screen():
     os.system("cls" if os.name == "nt" else "clear")
 
@@ -73,12 +73,12 @@ def start_game(high_score):
             print("You got the right answer in {} tries!".format(number_of_guesses))
             return number_of_guesses
         elif my_guess > correct_answer:
-            guess_message = "The correct answer is lower than your previous guess of {}.".format(my_guess)
+            guess_message = "The correct answer is *LOWER* than your previous guess of {}.".format(my_guess)
             # add number of guesses
             number_of_guesses+=1
             continue
         else:
-            guess_message = "The correct answer is higher than your previous guess of {}.".format(my_guess)
+            guess_message = "The correct answer is *HIGHER* than your previous guess of {}.".format(my_guess)
             # add number of guesses
             number_of_guesses+=1
             continue
@@ -97,7 +97,7 @@ if __name__ == "__main__":
         else:
             print("There is no high score yet! Good luck!")
 
-        play_game = input("\n*** PLEASE PRESS RETURN TO BEGIN, OR WRITE 'QUIT' TO EXIT THE GAME ***")
+        play_game = input("\n ___PLEASE PRESS RETURN TO BEGIN, OR WRITE 'QUIT' TO EXIT THE GAME___\n")
         clear_screen()
 
         if play_game.lower() == "quit":
